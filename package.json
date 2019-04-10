@@ -1,0 +1,25 @@
+{
+  "name": "fitdance",
+  "version": "1.0.0",
+  "description": "A free template for the home page of a website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flat-Pixels/fitdance-website-template.git"
+  },
+  "author": "Verdieu Steeve (Flat-Pixels)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flat-Pixels/fitdance-website-template/issues"
+  },
+  "homepage": "https://github.com/Flat-Pixels/fitdance-website-template#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
+  }
+}

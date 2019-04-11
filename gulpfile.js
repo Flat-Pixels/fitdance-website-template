@@ -8,17 +8,20 @@ sass.compiler = require('node-sass');
  * @type {Object}
  */
 const path = {
-	main: './src/',
-	styles: './src/assets/styles/'
+	main: './src',
+	styles: {
+		source: './src/assets/styles/**/*.scss',
+		dest: './src/assets/styles'
+	}
 }
 
 /**
  * Compile the Sass files
  */
 function styles(){
-	return gulp.src(path.styles + '**/*.scss')
+	return gulp.src(path.styles.source)
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-		.pipe(gulp.dest(path.styles))
+		.pipe(gulp.dest(path.styles.dest))
 		.pipe(browserSync.stream());
 }
 
@@ -40,8 +43,8 @@ function syncBrowser(){
  */
 function serve(){
 	syncBrowser();
-	gulp.watch(path.styles, styles);
-	gulp.watch(path.main + '**/*.html').on('change', function(){browserSync.reload()})
+	gulp.watch(path.styles.source, styles);
+	gulp.watch(path.main + '/**/*.html').on('change', function(){browserSync.reload()})
 }
 
 exports.default = serve;

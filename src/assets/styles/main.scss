@@ -339,3 +339,18 @@
   font-size: 22px;
   color: rgb(97, 97, 97); 
 }
+
+/**
+ * Section: Js Part
+ */
+
+.JS-fadein--activate {
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.JS-fadein--animate {
+  transition: all 2s cubic-bezier(0, 0, 0, 1.17);
+  transform: translateY(0);
+  opacity: 1;
+}

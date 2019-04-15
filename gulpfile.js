@@ -20,7 +20,7 @@ const path = {
  */
 function styles(){
 	return gulp.src(path.styles.source)
-		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(gulp.dest(path.styles.dest))
 		.pipe(browserSync.stream());
 }

@@ -1,13 +1,5 @@
 @import 'partials/_settings';
-@import 'partials/_helpers';
 @import 'partials/_base';
-
-._ft-title {
-  font-weight: bold;
-  color: #ffe064;
-
-  &--poor { color: rgb(115, 115, 115); }
-}
 
 /**
  * #1 - Layouts
@@ -43,7 +35,16 @@
 
 }
 
+._ft-title {
+  font-weight: bold;
+  color: #ffe064;
 
+  &--poor { color: $primary-text-color; }
+}
+
+/**
+ * Section : Header && Footer
+ */
 .header,
 .footer {
   position: relative;
@@ -55,6 +56,14 @@
   background-position: center;
 }
 
+.cover__container {
+  position: relative;
+  z-index: 4;
+}
+
+/**
+ * Section: Header
+ */
 
 .header {
   height: 850px;
@@ -92,11 +101,6 @@
   opacity: .4;
 }
 
-.cover__container {
-  position: relative;
-  z-index: 4;
-}
-
 .header__top,
 .header__nav {
   display: flex;
@@ -111,7 +115,11 @@
   letter-spacing: 3px;
 }
 
-.header__logo { color: $gadgets-color; }
+.header__logo {
+  color: $gadgets-color;
+
+  cursor: pointer;
+}
 
 .header__nav__item {
   margin-left: 25px;
@@ -142,11 +150,17 @@
   .p { margin-bottom: 50px; }
 }
 
+/**
+ * Section : Body
+ */
 .main {
   position: relative;
   z-index: 3;
 }
 
+/**
+ * Body/Section : The hero dancer
+ */
 .dancer-hero {
   display: flex;
   justify-content: space-between;
@@ -177,17 +191,18 @@
   line-height: 0.914;
   text-align: left;
 
-  color: rgb(79, 79, 79);
+  color: $secondary-text-color;
 }
 
 .dancer-hero__details {
   font-size: 25px;
-  color: rgb(115, 115, 115);
+  color: $primary-text-color;
   line-height: 1.4;
 }
 
-
-
+/**
+ * Body/Section : The clubs list
+ */
 .club-sponsors {}
 
 .club-sponsors__title {
@@ -223,7 +238,7 @@
   text-transform: uppercase;
   letter-spacing: 3px;
 
-  color: rgb(79, 79, 79);
+  color: $secondary-text-color;
 }
 
 .club-sponsors__about {
@@ -231,7 +246,7 @@
   line-height: 1.818;
   text-align: center;
 
-  color: rgb(115, 115, 115);
+  color: $primary-text-color;
 }
 
 .footer {

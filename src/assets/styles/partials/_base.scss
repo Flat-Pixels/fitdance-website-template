@@ -1,6 +1,5 @@
 * { box-sizing: border-box; }
 
-
 html,
 body,
 p,
@@ -20,9 +19,14 @@ body {
   line-height: 25px;
 }
 
+a {
+  text-decoration: none;
+  outline: none;
+}
+
 input {
-	outline: none;
-	border: none;
+  outline: none;
+  border: none;
 }
 
 img { display: block; }

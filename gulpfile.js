@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const babel = require('gulp-babel');
+const zip = require('gulp-zip');
 sass.compiler = require('node-sass');
 
 /**
@@ -62,6 +63,9 @@ function serve(){
 	gulp.watch(path.main + '/**/*.html').on('change', function(){browserSync.reload()})
 }
 
+/**
+ * Compile the assets
+ */
 function compileAssets(){
 	return gulp.src([
 		  '**/*.html',
@@ -73,5 +77,14 @@ function compileAssets(){
 	.pipe(gulp.dest(path.dist));
 }
 
+/**
+ * Zip the comipled files
+ */
+function zipBuild(){
+  return gulp.src(path.dist + '/**')
+      .pipe(zip('archive.zip'))
+      .pipe(gulp.dest(path.dist))
+}
+
 exports.default = serve;
-exports.build = gulp.series(compileAssets, compileEs6);
+exports.build = gulp.series(compileAssets, compileEs6, zipBuild);

@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const babel = require('gulp-babel');
 const zip = require('gulp-zip');
+const autoprefixer = require('gulp-autoprefixer');
 sass.compiler = require('node-sass');
 
 /**
@@ -28,6 +29,10 @@ const path = {
 function styles(){
 	return gulp.src(path.styles.source)
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 3 versions'],
+      cascade: false
+    }))
 		.pipe(gulp.dest(path.styles.dest))
 		.pipe(browserSync.stream());
 }

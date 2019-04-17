@@ -40,6 +40,7 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -91,6 +92,7 @@ img {
   height: 55px;
   padding: 0 40px;
   background-color: #ffe064;
+  -webkit-box-shadow: 0px 1px 45px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 45px 0px rgba(0, 0, 0, 0.15);
   border-radius: 293px;
   line-height: 55px;
@@ -144,6 +146,8 @@ img {
   height: 600px;
   background-color: white;
   z-index: 3;
+  -webkit-transform: skewY(160deg);
+  -ms-transform: skewY(160deg);
   transform: skewY(160deg);
 }
 
@@ -156,14 +160,22 @@ img {
   right: 0;
   bottom: 0;
   z-index: 1;
+  background-image: -webkit-gradient(linear, left top, right top, from(#201e8e), to(#b33ba6));
+  background-image: -o-linear-gradient(left, #201e8e 0%, #b33ba6 100%);
   background-image: linear-gradient(90deg, #201e8e 0%, #b33ba6 100%);
   opacity: .4;
 }
 
 .header__top,
 .header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   height: 100px;
   font-size: 22px;
@@ -181,6 +193,8 @@ img {
   margin-left: 25px;
   color: white;
   text-decoration: none;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
 }
 
@@ -218,8 +232,14 @@ img {
  * Body/Section : The hero dancer
  */
 .dancer-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   z-index: 3;
   margin-top: -650px;
@@ -268,8 +288,13 @@ img {
 }
 
 .club-sponsors__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -321,7 +346,11 @@ img {
 }
 
 .footer__social__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 50px;
 }
@@ -343,6 +372,7 @@ img {
   padding: 50px 45px;
   margin-top: -150px;
   background-color: white;
+  -webkit-box-shadow: 0px 42px 50px 5px rgba(0, 0, 0, 0.35);
   box-shadow: 0px 42px 50px 5px rgba(0, 0, 0, 0.35);
   border-radius: 3px;
   text-align: center;
@@ -377,12 +407,18 @@ img {
  * Section: Js Part
  */
 .JS-fadein--activate {
+  -webkit-transform: translateY(40px);
+  -ms-transform: translateY(40px);
   transform: translateY(40px);
   opacity: 0;
 }
 
 .JS-fadein--animate {
+  -webkit-transition: all 2s cubic-bezier(0, 0, 0, 1.17);
+  -o-transition: all 2s cubic-bezier(0, 0, 0, 1.17);
   transition: all 2s cubic-bezier(0, 0, 0, 1.17);
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
 }

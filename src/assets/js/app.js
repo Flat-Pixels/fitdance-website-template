@@ -38,7 +38,7 @@ function isElementVisible(el) {
     bottom = bottom / 2;
   }
 
-  return dimension.top >= 0 && bottom <= windowHeight;
+  return dimension.top >= 0 && bottom <= windowHeight * 1.3;
 }
 
 /**
